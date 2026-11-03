@@ -1,0 +1,35 @@
+[
+  {
+    "model": "orders.order",
+    "pk": 1,
+    "fields": {
+      "customer_name": "Анна Иванова",
+      "order_date": "2026-11-02",
+      "total_amount": "1500.00",
+      "is_paid": true,
+      "delivery_address": "Ставрополь, ул. Мира, 10"
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 2,
+    "fields": {
+      "customer_name": "Иван Петров",
+      "order_date": "2026-11-02",
+      "total_amount": "750.50",
+      "is_paid": false,
+      "delivery_address": "Ставрополь, ул. Ленина, 25"
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 3,
+    "fields": {
+      "customer_name": "Мария Смирнова",
+      "order_date": "2026-11-02",
+      "total_amount": "3200.00",
+      "is_paid": true,
+      "delivery_address": "Ставрополь, ул. Доваторцев, 8"
+    }
+  }
+]

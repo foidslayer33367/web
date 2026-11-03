@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Заказы — лабораторная работа 2</title>
+<style>body{font:17px system-ui;margin:50px auto;max-width:1120px;padding:0 24px;color:#172238;background:#f4f6fa}h1{font-size:36px;margin-bottom:8px}nav{margin:25px 0}a{color:#2457ae;margin-right:24px}table{border-collapse:collapse;width:100%;background:white}td,th{text-align:left;padding:18px 14px;border-bottom:1px solid #ddd}th{background:#e5ebf5}.muted{color:#53637b}footer{margin-top:28px;font-size:14px}</style></head>
+<body><p class="muted">Лабораторная работа № 2 · Вариант 10</p>
+<h1>{% if paid_only %}Оплаченные заказы{% else %}Все заказы{% endif %}</h1>
+<p>Осипов Герман Юрьевич · ПИЖ-б-о-25-2</p>
+<nav><a href="/">Все заказы</a><a href="/?paid=1">Только оплаченные</a><a href="/admin/">Управление заказами</a></nav>
+<table><thead><tr><th>ID</th><th>Заказчик</th><th>Дата</th><th>Сумма, ₽</th><th>Оплата</th><th>Адрес доставки</th></tr></thead><tbody>
+{% for order in orders %}<tr><td>{{ order.id }}</td><td>{{ order.customer_name }}</td><td>{{ order.order_date|date:"d.m.Y" }}</td><td>{{ order.total_amount }}</td><td>{{ order.is_paid|yesno:"Оплачен,Не оплачен" }}</td><td>{{ order.delivery_address|default:"Не указан" }}</td></tr>{% empty %}<tr><td colspan="6">Заказов пока нет. Загрузите демонстрационные данные по README.</td></tr>{% endfor %}
+</tbody></table><footer class="muted">Django · SQLite · Модель Order · Создание, изменение и удаление доступны в административной панели.</footer></body></html>
